@@ -28,6 +28,9 @@ info_trial(win, text_instructions_1)
 
 
 main_trial(win, thisExp, expInfo, outlet)
+outlet.push_sample(['Finish_trial'])
+time.sleep(0.0001)
+
 
 info_trial(win, text_final_s2)
 

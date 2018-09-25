@@ -193,7 +193,7 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow):
         currentLoop = trials
         # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
         outlet.push_sample(['Start_trial'])
-        time.sleep(0.01)
+        time.sleep(0.0001)
         if thisTrial != None:
             for paramName in thisTrial:
                 exec ('{} = thisTrial[paramName]'.format(paramName))
@@ -228,7 +228,7 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow):
                 sound_1.frameNStart = frameN  # exact frame index
                 sound_1.play()  # start the sound (it finishes automatically)
                 outlet.push_sample(['Start_sound'])
-                time.sleep(0.01)
+                time.sleep(0.0001)
 
             # *polygon* updates
             if t >= 2 and fixation_cross.status == NOT_STARTED:
@@ -237,7 +237,7 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow):
                 fixation_cross.frameNStart = frameN  # exact frame index
                 fixation_cross.setAutoDraw(True)
                 outlet.push_sample(['Start_fixation'])
-                time.sleep(0.01)
+                time.sleep(0.0001)
             frameRemains = 2 + 5 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if fixation_cross.status == STARTED and t >= frameRemains:
                 fixation_cross.setAutoDraw(False)
@@ -249,13 +249,13 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow):
                 arrow_image.frameNStart = frameN  # exact frame index
                 arrow_image.setAutoDraw(True)
                 outlet.push_sample(['Start_arrow'])
-                time.sleep(0.01)
+                time.sleep(0.0001)
 
             frameRemains = 3.0 + 1.0 - win.monitorFramePeriod * 0.75  # most of one frame period left
             if arrow_image.status == STARTED and t >= frameRemains:
                 arrow_image.setAutoDraw(False)
                 outlet.push_sample([condition])
-                time.sleep(0.01)
+                time.sleep(0.0001)
 
             # check if all components have finished
             if not continueRoutine:  # a component has requested a forced-end of Routine
