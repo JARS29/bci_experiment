@@ -89,3 +89,5 @@ def extracting_index(exp_data, eeg_data):   # RST data for the ts of the sentenc
 
     return index_EEG_IR, index_EEG_ER, index_EEG_IL, index_EEG_EL, index_EEG_IT, index_EEG_RS
 
+def extracting_EEG_data(index, eeg_data):
+    return 0

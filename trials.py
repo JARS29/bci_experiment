@@ -12,7 +12,6 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 globalClock = core.Clock()  # to track the time since experiment started
-routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine
 endExpNow = False  # flag for 'escape' or other condition => quit the exp
 
 def LSL_initizialization(expName, user_info):
@@ -77,7 +76,7 @@ def setting_monitor(name, distance, expInfo):
     return win
 
 # Instructions trial
-def info_trial(win, text, endExpNow=endExpNow, routineTimer=routineTimer):
+def info_trial(win, text, endExpNow=endExpNow):
     instructPracticeClock = core.Clock()
     instruction_stimuli = visual.TextStim(win=win, name='instr1',
                              text=text, font='Arial',
@@ -152,14 +151,14 @@ def info_trial(win, text, endExpNow=endExpNow, routineTimer=routineTimer):
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
     # the Routine "instructPractice" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
 
 
 # Main trial
-def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow):
+def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow ):
     trialClock = core.Clock()
     sound_1 = sound.Sound('440', secs=1.0)
     sound_1.setVolume(1)
+    routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine
     fixation_cross = visual.ShapeStim(
                 win=win, name='polygon', vertices='cross',
                 size=(0.2, 0.2),
@@ -279,9 +278,8 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow):
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
         sound_1.stop()  # ensure sound has stopped at end of routine
+        routineTimer.reset()
         thisExp.nextEntry()
-
-
 
     # save data for this loop
 
