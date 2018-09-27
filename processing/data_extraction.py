@@ -14,7 +14,7 @@ def importing_data(filename):
 
 
 def extracting_index(exp_data, eeg_data):   # RST data for the ts of the sentences+recall, data for the indexes (either EEG or Eye-tracking), type= 'sentences' or 'recall'
-    #IR= Imagine right, ER= Execute right, IL= Imagine Left, EL = Execute Left, IT= Imagine third arm, RS= Resting state, FT= Final trial, SS= start sound
+    #IR= Imagine right, ER= Execute right, IL= Imagine Left, EL = Execute Left, IT= Imagine third arm, RS= Resting state, FT= Final trial
 
     index_IR=[]
     index_ER=[]
@@ -89,5 +89,16 @@ def extracting_index(exp_data, eeg_data):   # RST data for the ts of the sentenc
 
     return index_EEG_IR, index_EEG_ER, index_EEG_IL, index_EEG_EL, index_EEG_IT, index_EEG_RS
 
-def extracting_EEG_data(index, eeg_data):
-    return 0
+def extracting_EEG_data(index_EEG_IR, index_EEG_ER, index_EEG_IL, index_EEG_EL, index_EEG_IT, index_EEG_RS, eeg_data):
+    n_trial = len(index_EEG_IR)
+    raw_data={}
+    temp={}
+    for i in range(n_trial):
+        temp['IR']= eeg_data['time_series'][index_EEG_IR[i][0]:index_EEG_IR[i][1]]
+        temp['ER']= eeg_data['time_series'][index_EEG_ER[i][0]:index_EEG_ER[i][1]]
+        temp['IL']= eeg_data['time_series'][index_EEG_IL[i][0]:index_EEG_IL[i][1]]
+        temp['EL']= eeg_data['time_series'][index_EEG_EL[i][0]:index_EEG_EL[i][1]]
+        temp['IT']= eeg_data['time_series'][index_EEG_IT[i][0]:index_EEG_IT[i][1]]
+        temp['RS']= eeg_data['time_series'][index_EEG_RS[i][0]:index_EEG_RS[i][1]]
+        raw_data[i+1]=temp.copy()
+    return raw_data
