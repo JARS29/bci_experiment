@@ -93,12 +93,39 @@ def extracting_EEG_data(index_EEG_IR, index_EEG_ER, index_EEG_IL, index_EEG_EL, 
     n_trial = len(index_EEG_IR)
     raw_data={}
     temp={}
+    temp1={}
     for i in range(n_trial):
-        temp['IR']= eeg_data['time_series'][index_EEG_IR[i][0]:index_EEG_IR[i][1]]
-        temp['ER']= eeg_data['time_series'][index_EEG_ER[i][0]:index_EEG_ER[i][1]]
-        temp['IL']= eeg_data['time_series'][index_EEG_IL[i][0]:index_EEG_IL[i][1]]
-        temp['EL']= eeg_data['time_series'][index_EEG_EL[i][0]:index_EEG_EL[i][1]]
-        temp['IT']= eeg_data['time_series'][index_EEG_IT[i][0]:index_EEG_IT[i][1]]
-        temp['RS']= eeg_data['time_series'][index_EEG_RS[i][0]:index_EEG_RS[i][1]]
+        temp1['data']=eeg_data['time_series'][index_EEG_IR[i][0]:index_EEG_IR[i][1]]
+        temp1['ts']=eeg_data['time_stamps'][index_EEG_IR[i][0]:index_EEG_IR[i][1]]
+        temp['IR']= temp1.copy()
+        temp1.clear()
+
+        temp1['data'] = eeg_data['time_series'][index_EEG_ER[i][0]:index_EEG_ER[i][1]]
+        temp1['ts'] = eeg_data['time_stamps'][index_EEG_ER[i][0]:index_EEG_ER[i][1]]
+        temp['ER']= temp1.copy()
+        temp1.clear()
+
+        temp1['data'] = eeg_data['time_series'][index_EEG_IL[i][0]:index_EEG_IL[i][1]]
+        temp1['ts'] = eeg_data['time_stamps'][index_EEG_IL[i][0]:index_EEG_IL[i][1]]
+        temp['IL']= temp1.copy()
+        temp1.clear()
+
+        temp1['data'] = eeg_data['time_series'][index_EEG_EL[i][0]:index_EEG_EL[i][1]]
+        temp1['ts'] = eeg_data['time_stamps'][index_EEG_EL[i][0]:index_EEG_EL[i][1]]
+        temp['EL']= temp1.copy()
+        temp1.clear()
+
+        temp1['data'] = eeg_data['time_series'][index_EEG_IT[i][0]:index_EEG_IT[i][1]]
+        temp1['ts'] = eeg_data['time_stamps'][index_EEG_IT[i][0]:index_EEG_IT[i][1]]
+        temp['IT']= temp1.copy()
+        temp1.clear()
+
+        temp1['data'] = eeg_data['time_series'][index_EEG_RS[i][0]:index_EEG_RS[i][1]]
+        temp1['ts'] = eeg_data['time_stamps'][index_EEG_RS[i][0]:index_EEG_RS[i][1]]
+        temp['RS']= temp1.copy()
+        temp1.clear()
+
         raw_data[i+1]=temp.copy()
+        temp.copy().clear()
+
     return raw_data
