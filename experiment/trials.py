@@ -175,7 +175,7 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow ):
                 texRes=128, interpolate=True, depth=-2.0)
 
     # set up handler to look after randomisation of conditions etc
-    trials = data.TrialHandler(nReps=5, method='random',
+    trials = data.TrialHandler(nReps=20, method='random',
                                extraInfo=expInfo, originPath=-1,
                                trialList=data.importConditions(u'common\\conditions.xlsx'),
                                seed=None, name='trials')

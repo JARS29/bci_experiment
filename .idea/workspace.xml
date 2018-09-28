@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="608d2d97-031b-4bcc-80f3-82b72856d93a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/processing/main_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment/common/untitled.xdf" beforeDir="false" afterPath="$PROJECT_DIR$/processing/common/untitled.xdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/experiment/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiment/main_experiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/processing/data_extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/processing/data_extraction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/experiment/trials.py" beforeDir="false" afterPath="$PROJECT_DIR$/experiment/trials.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +17,7 @@
         <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="120" />
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -53,15 +49,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="untitled.xdf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/processing/common/untitled.xdf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="data_extraction.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/processing/data_extraction.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -74,16 +61,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trials.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="trials.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/experiment/trials.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="71" lean-forward="true" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="73" />
+            <state relative-caret-position="323">
+              <caret line="169" column="38" lean-forward="true" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
+              <folding>
+                <element signature="e#47#120#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/Python27/Lib/site-packages/psychopy/sound/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
@@ -124,14 +114,15 @@
         <option value="$PROJECT_DIR$/processing/data_extraction.py" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
         <option value="$PROJECT_DIR$/processing/main.py" />
+        <option value="$PROJECT_DIR$/experiment/trials.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1937" />
+    <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -330,19 +321,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1654373" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16778524" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="R Packages" />
+      <window_info anchor="right" id="R Graphics" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3093682" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.8137255" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3093682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897604" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -356,6 +348,64 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processing/main_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiment/main_experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processing/common/xdf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/processing/data_extraction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="28" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiment/trials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="71" lean-forward="true" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="73" />
+          <folding>
+            <element signature="e#47#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/psychopy/sound/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="61" column="26" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="26" />
+          <folding>
+            <element signature="e#2075#2139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -431,7 +481,7 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="120" />
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -473,19 +523,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/experiment/trials.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="71" lean-forward="true" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python27/Lib/site-packages/psychopy/sound/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="61" column="26" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="26" />
           <folding>
             <element signature="e#2075#2139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/experiment/trials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="169" column="38" lean-forward="true" selection-start-line="169" selection-start-column="38" selection-end-line="169" selection-end-column="38" />
+          <folding>
+            <element signature="e#47#120#0" expanded="true" />
           </folding>
         </state>
       </provider>
