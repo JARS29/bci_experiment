@@ -1,4 +1,5 @@
 from common.xdf import load_xdf
+import csv
 import numpy as np
 
 
@@ -94,38 +95,81 @@ def extracting_EEG_data(index_EEG_IR, index_EEG_ER, index_EEG_IL, index_EEG_EL, 
     raw_data={}
     temp={}
     temp1={}
-    for i in range(n_trial):
-        temp1['data']=eeg_data['time_series'][index_EEG_IR[i][0]:index_EEG_IR[i][1]]
-        temp1['ts']=eeg_data['time_stamps'][index_EEG_IR[i][0]:index_EEG_IR[i][1]]
-        temp['IR']= temp1.copy()
-        temp1.clear()
+    #Time:8Hz,Epoch,O1,O2,Pz,P1,P2,Event Id,Event Date,Event Duration
+    with open('raw_EEG.csv', 'wb') as nf:
+        newf = csv.writer(nf, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        newf.writerow(['Time','chan1','chan2','chan3','chan4','chan5','chan6','chan7','chan8','Sample_rate'])
+        #Failed  importing Open vibe
+        # newf.writerow(['Time:250Hz',
+        #                'Epoch',
+        #                'F3',
+        #                'Fz',
+        #                'F4',
+        #                'C3',
+        #                'Cz',
+        #                'C4',
+        #                'P3',
+        #                'P4',
+        #                'Event Id',
+        #                'Event Date',
+        #                'Event Duration'])
 
-        temp1['data'] = eeg_data['time_series'][index_EEG_ER[i][0]:index_EEG_ER[i][1]]
-        temp1['ts'] = eeg_data['time_stamps'][index_EEG_ER[i][0]:index_EEG_ER[i][1]]
-        temp['ER']= temp1.copy()
-        temp1.clear()
+        for i in range(n_trial):
+            temp1['data']=eeg_data['time_series'][index_EEG_IR[i][0]:index_EEG_IR[i][1]]
+            temp1['ts']=eeg_data['time_stamps'][index_EEG_IR[i][0]:index_EEG_IR[i][1]]
+            temp1['ts'] = np.round(temp1['ts'] - temp1['ts'][0], 3)
+            for j,k in zip(temp1['ts'],temp1['data']):
+                newf.writerow([j] + k.tolist() + [250])
+                #newf.writerow([j, n_trial] + k.tolist() + [0, j, 4]) Failed importing Openvibe
+            temp['IR'] = temp1.copy()
+            temp1.clear()
 
-        temp1['data'] = eeg_data['time_series'][index_EEG_IL[i][0]:index_EEG_IL[i][1]]
-        temp1['ts'] = eeg_data['time_stamps'][index_EEG_IL[i][0]:index_EEG_IL[i][1]]
-        temp['IL']= temp1.copy()
-        temp1.clear()
+            temp1['data'] = eeg_data['time_series'][index_EEG_ER[i][0]:index_EEG_ER[i][1]]
+            temp1['ts'] = eeg_data['time_stamps'][index_EEG_ER[i][0]:index_EEG_ER[i][1]]
+            temp1['ts'] = np.round(temp1['ts'] - temp1['ts'][0], 3)
+            for j,k in zip(temp1['ts'],temp1['data']):
+                newf.writerow([j] + k.tolist() + [250])
+                #newf.writerow([j, n_trial] + k.tolist() + [1, j, 4]) Failed importing Openvibe
+            temp['ER']= temp1.copy()
+            temp1.clear()
 
-        temp1['data'] = eeg_data['time_series'][index_EEG_EL[i][0]:index_EEG_EL[i][1]]
-        temp1['ts'] = eeg_data['time_stamps'][index_EEG_EL[i][0]:index_EEG_EL[i][1]]
-        temp['EL']= temp1.copy()
-        temp1.clear()
+            temp1['data'] = eeg_data['time_series'][index_EEG_IL[i][0]:index_EEG_IL[i][1]]
+            temp1['ts'] = eeg_data['time_stamps'][index_EEG_IL[i][0]:index_EEG_IL[i][1]]
+            temp1['ts'] = np.round(temp1['ts'] - temp1['ts'][0], 3)
+            for j,k in zip(temp1['ts'],temp1['data']):
+                newf.writerow([j] + k.tolist() + [250])
+                #newf.writerow([j, n_trial] + k.tolist() + [2, j, 4]) Failed importing Openvibe
+            temp['IL']= temp1.copy()
+            temp1.clear()
 
-        temp1['data'] = eeg_data['time_series'][index_EEG_IT[i][0]:index_EEG_IT[i][1]]
-        temp1['ts'] = eeg_data['time_stamps'][index_EEG_IT[i][0]:index_EEG_IT[i][1]]
-        temp['IT']= temp1.copy()
-        temp1.clear()
+            temp1['data'] = eeg_data['time_series'][index_EEG_EL[i][0]:index_EEG_EL[i][1]]
+            temp1['ts'] = eeg_data['time_stamps'][index_EEG_EL[i][0]:index_EEG_EL[i][1]]
+            temp1['ts'] = np.round(temp1['ts'] - temp1['ts'][0], 3)
+            for j,k in zip(temp1['ts'],temp1['data']):
+                newf.writerow([j] + k.tolist() + [250])
+                #newf.writerow([j, n_trial] + k.tolist() + [3, j, 4]) Failed importing Openvibe
+            temp['EL']= temp1.copy()
+            temp1.clear()
 
-        temp1['data'] = eeg_data['time_series'][index_EEG_RS[i][0]:index_EEG_RS[i][1]]
-        temp1['ts'] = eeg_data['time_stamps'][index_EEG_RS[i][0]:index_EEG_RS[i][1]]
-        temp['RS']= temp1.copy()
-        temp1.clear()
+            temp1['data'] = eeg_data['time_series'][index_EEG_IT[i][0]:index_EEG_IT[i][1]]
+            temp1['ts'] = eeg_data['time_stamps'][index_EEG_IT[i][0]:index_EEG_IT[i][1]]
+            temp1['ts'] = np.round(temp1['ts'] - temp1['ts'][0], 3)
+            for j,k in zip(temp1['ts'],temp1['data']):
+                newf.writerow([j] + k.tolist() + [250])
+                #newf.writerow([j, n_trial] + k.tolist() + [4, j, 4]) Failed importing Openvibe
+            temp['IT']= temp1.copy()
+            temp1.clear()
 
-        raw_data[i+1]=temp.copy()
-        temp.copy().clear()
+            temp1['data'] = eeg_data['time_series'][index_EEG_RS[i][0]:index_EEG_RS[i][1]]
+            temp1['ts'] = eeg_data['time_stamps'][index_EEG_RS[i][0]:index_EEG_RS[i][1]]
+            temp1['ts'] = np.round(temp1['ts'] - temp1['ts'][0], 3)
+            for j,k in zip(temp1['ts'],temp1['data']):
+                newf.writerow([j] + k.tolist() + [250])
+                #newf.writerow([j, n_trial] + k.tolist() + [5, j, 4]) Failed importing Openvibe
+            temp['RS']= temp1.copy()
+            temp1.clear()
+
+            raw_data[i+1]=temp.copy()
+            temp.copy().clear()
 
     return raw_data
