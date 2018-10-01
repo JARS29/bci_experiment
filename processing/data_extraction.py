@@ -144,7 +144,7 @@ def extracting_EEG_data(index_EEG_IR, index_EEG_ER, index_EEG_IL, index_EEG_EL, 
     temp={}
     temp1={}
     #Time:8Hz,Epoch,O1,O2,Pz,P1,P2,Event Id,Event Date,Event Duration
-    with open('raw_EEG.csv', 'wb') as nf:
+    with open('raw_EEG.csv', 'w') as nf:   #Changed by python 3 for MNE
         newf = csv.writer(nf, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
         #newf.writerow(['Time','chan1','chan2','chan3','chan4','chan5','chan6','chan7','chan8','Sample_rate'])
         #Failed  importing Open vibe

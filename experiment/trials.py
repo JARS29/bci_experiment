@@ -159,23 +159,23 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow ):
     sound_1 = sound.Sound('440', secs=1.0)
     sound_1.setVolume(1)
     routineTimer = core.CountdownTimer()  # to track time remaining of each (non-slip) routine
-    fixation_cross = visual.ShapeStim(
-                win=win, name='polygon', vertices='cross',
-                size=(0.2, 0.2),
-                ori=0, pos=(0, 0),
-                lineWidth=1, lineColor=[1, 1, 1], lineColorSpace='rgb',
-                fillColor=[1, 1, 1], fillColorSpace='rgb',
-                opacity=1, depth=-1.0, interpolate=True)
+    fixation_cross = visual.ImageStim(
+                win=win, name='image',
+                image=u'common\\recall_cross.png', mask=None,
+                ori=0, pos=(0, 0), size=(1, 1),
+                color=[1,1,1], colorSpace='rgb', opacity=1,
+                flipHoriz=False, flipVert=False,
+                texRes=128, interpolate=True, depth=0.0)
     arrow_image = visual.ImageStim(
                 win=win, name='image',
                 image='sin', mask=None,
-                ori=1.0, pos=(0, 0.5), size=(0.25, 0.25),
+                ori=0.0, pos=(0, 0), size=(1, 1),
                 color=[1,1,1], colorSpace='rgb', opacity=1,
                 flipHoriz=False, flipVert=False,
                 texRes=128, interpolate=True, depth=-2.0)
 
     # set up handler to look after randomisation of conditions etc
-    trials = data.TrialHandler(nReps=20, method='random',
+    trials = data.TrialHandler(nReps=5, method='random',
                                extraInfo=expInfo, originPath=-1,
                                trialList=data.importConditions(u'common\\conditions.xlsx'),
                                seed=None, name='trials')
@@ -205,7 +205,6 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow ):
         routineTimer.add(7.000000)
         # update component parameters for each repeat
         sound_1.setSound('440', secs=1.0)
-        arrow_image.setOri(ori)
         arrow_image.setImage(img)
         # keep track of which components have finished
         trialComponents = [sound_1, fixation_cross, arrow_image]
