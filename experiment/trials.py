@@ -34,7 +34,7 @@ def setting_exp(expName,expInfo):
     expInfo['expName'] = expName
 
     # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-    filename = _thisDir + os.sep + u'data' + os.sep + '%s_%s' % (expInfo['Participant'], expInfo['date'])
+    filename = _thisDir + os.sep + u'data' + os.sep + '%s_%s' % (expInfo['Session'], expInfo['Participant'])
 
     # An ExperimentHandler isn't essential but helps with data saving
     thisExp = data.ExperimentHandler(name=expName, version='',
@@ -282,8 +282,7 @@ def main_trial(win, thisExp, expInfo, outlet, endExpNow=endExpNow ):
         thisExp.nextEntry()
 
     # save data for this loop
-
     # these shouldn't be strictly necessary (should auto-save)
     thisExp.saveAsWideText(thisExp.dataFileName + '.csv')
-    thisExp.saveAsPickle(thisExp.dataFileName)
+    #thisExp.saveAsPickle(thisExp.dataFileName)
     logging.flush()
